@@ -7,7 +7,7 @@ RUN sed -i 's/# \(.*multiverse$\)/\1/g' /etc/apt/sources.list && \
     apt install -y build-essential && \
     apt install -y software-properties-common && \
     apt install -y byobu curl git git-lfs htop man unzip vim wget
-RUN mkdir /root/Downloads && mkdir /root/Desktop
+RUN mkdir /root/Downloads && mkdir /root/Desktop && ln -s /root/ /home/root
 RUN git clone https://github.com/PSOPT/psopt /root/psopt/
 RUN cd /root/psopt/ && \
     sed 's/sudo //g' install-ubuntu-18.04.sh > sudoless-install-ubuntu-18.04.sh && \
