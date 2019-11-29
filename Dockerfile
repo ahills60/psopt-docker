@@ -4,6 +4,7 @@ RUN ln -fs /usr/share/zoneinfo/Europe/London /etc/localtime
 RUN sed -i 's/# \(.*multiverse$\)/\1/g' /etc/apt/sources.list && \
     apt update && \
     apt -y upgrade && \
+    apt install -y apt-utils && \
     apt install -y build-essential && \
     apt install -y software-properties-common && \
     apt install -y byobu curl git git-lfs htop man unzip vim wget
